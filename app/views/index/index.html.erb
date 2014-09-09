@@ -1,0 +1,6 @@
+<% if !signed_in? %>
+<a href='http://localhost:3000/signin'>Sign in</a>
+<% else %>
+<%= current_user.fullname %>
+<%= link_to('Signout', signout_path , :method => 'delete') %>
+<% end %>
