@@ -6,11 +6,16 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new
-    @book.name = params[:book][:name]
-    @book.author = params[:book][:author]
-    @book.pages = params[:book][:pages]
-    @book.user = current_user
-    @book.save
+    @book.name = params[:books][:name]
+    @book.author = params[:books][:author]
+    @book.pages = params[:books][:pages]
+    @book.user_id = current_user.id
+    
+    if @book.save
+     render 'show'
+    else
+        render 'new'
+    end
   end
 
   def show
@@ -26,6 +31,23 @@ class BooksController < ApplicationController
   end
 
   def update
+  end
+  def search
+    @books = []
+    
+      @books_title = Book.search(params[:search], 'name')
+      @books = @books + @books_title
+   
+      @books_contents = Book.search(params[:search], 'description' )
+      @books = @books + @books_contents
+      #@books_genres = Book.search(params[:search], 'genres' )
+      #@books = @books + @books_genres
+      @books_author = Book.search(params[:search], 'author' )
+      @books = @books + @books_author
+     # @comments = Comment.where("content LIKE ?", "%#{params[:search]}%")
+     # @books_comments = Book.find(@comments.uniq.pluck(:Book_id))
+      #@books = @books + @books_comments
+    #end
   end
 
 end

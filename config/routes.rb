@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root 'index#index' 
   resources :users, only:[:show,:update]
   resources :sessions, only: [:create, :delete]
+  resources :books
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/search', to: 'books#search', via: 'get'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

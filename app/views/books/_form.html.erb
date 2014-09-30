@@ -1,0 +1,16 @@
+
+ <%= form_for(:books, url: books_path, method: 'post' , :html => { :class => "form-horizontal"}) do |f| %>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
+<br>
+<%= f.label :pages %>
+ <%= f.text_field :pages %>
+ <br>
+<%= f.label :genres %>
+ <%= f.text_field :genres %>
+<br>
+<%= f.label :author %>
+ <%= f.text_field :author %>
+<br>
+<%= f.submit "Submit" %>
+<% end %>

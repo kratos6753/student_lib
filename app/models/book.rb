@@ -4,7 +4,13 @@ class Book < ActiveRecord::Base
   has_and_belongs_to_many :genres 
 
   validates :name, presence: true
-  validates :genres, presence: true, length: {in: 1..4}
+ #validates :genres, presence: true, length: {in: 1..4}
   validates :author, presence: true
   validates :user_id, presence: true
+
+
+   def self.search(search, designation)
+    search_condition = "%" + search + "%"
+    where("#{designation} LIKE ?", "%#{search}%")
+  end
 end
