@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/* Signin */
+.signin_form {
+  width: 20%;
+  height: 40%;
+  .form_container {
+    .form-control {
+      border-radius: none !important;
+  }
+
+  }
+}
+
+/* Footer */
+#footer {
+  position: absolute;
+  bottom: 0;
+  .footer-container {
+  
+}
+}
