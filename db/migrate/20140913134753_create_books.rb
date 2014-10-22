@@ -1,11 +1,14 @@
 class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
-      t.string :name, null: false
+      t.belongs_to :user, null:false
+      t.string :isbn
+      t.string :cover, default:'default-cover.png'
+      t.string :title, null: false
+      t.text :description, null: false
       t.string :author, null: false
-      t.integer :pages
-      t.text :description
-      t.belongs_to :user, null: false
+      t.integer :pages, null:false
+      t.string :genre, null:false
 
       t.timestamps
     end

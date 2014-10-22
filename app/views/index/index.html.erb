@@ -2,5 +2,6 @@
 <a href='http://localhost:3000/signin'>Sign in</a>
 <% else %>
 <%= current_user.fullname %>
-<%= link_to('Signout', signout_path , :method => 'delete') %>
+<%= link_to('Signout', signout_path , :method => 'delete') %><br>
+<%= link_to 'Books', books_path %>
 <% end %>

@@ -1,14 +1,19 @@
 class BooksController < ApplicationController
-
+  include SessionsHelper
+  
   def new
     @book = Book.new
   end
 
   def create
     @book = Book.new
-    @book.name = params[:books][:name]
+    @book.isbn = params[:books][:isbn]
+    @book.cover = params[:books][:cover]
+    @book.title = params[:books][:title]
+    @book.description = params[:books][:description]
     @book.author = params[:books][:author]
     @book.pages = params[:books][:pages]
+    @book.genre = params[:books][:genre]
     @book.user_id = current_user.id
     
     if @book.save
@@ -35,7 +40,7 @@ class BooksController < ApplicationController
   def search
     @books = []
     
-      @books_title = Book.search(params[:search], 'name')
+      @books_title = Book.search(params[:search], 'title')
       @books = @books + @books_title
    
       @books_contents = Book.search(params[:search], 'description' )

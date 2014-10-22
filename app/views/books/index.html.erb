@@ -1,5 +1,6 @@
  <%= form_tag search_path, method: 'get' do%>
   <%= text_field_tag :search, params[:search], placeholder:"Search", class:"form-control search_box" %>
-  <%= submit_tag "Search", class:"btn btn-xs btn-primary" %>
-  
-<% end %><hr>
+  <%= submit_tag "Search", class:"btn btn-xs btn-primary" %> 
+<% end %>
+<%= link_to 'Add a book', new_book_path %>
+<hr>

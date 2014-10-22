@@ -14,11 +14,14 @@
 ActiveRecord::Schema.define(version: 20140913140913) do
 
   create_table "books", force: true do |t|
-    t.string   "name",        null: false
-    t.string   "author",      null: false
-    t.integer  "pages"
-    t.text     "description"
-    t.integer  "user_id",     null: false
+    t.integer  "user_id",                                   null: false
+    t.string   "isbn"
+    t.string   "cover",       default: "default-cover.png"
+    t.string   "title",                                     null: false
+    t.text     "description",                               null: false
+    t.string   "author",                                    null: false
+    t.integer  "pages",                                     null: false
+    t.string   "genre",                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140913140913) do
     t.timestamp "updated_timestamp"
     t.text      "usertype"
     t.integer   "notifications_count",             default: 0, null: false
+    t.string    "typename",            limit: 40
   end
 
   add_index "users", ["username"], name: "UNIQUE", unique: true, using: :btree
