@@ -1,1 +1,18 @@
-
+<% if signed_in? %>
+<div class="container-fluid">
+  <% @books.order(:created_at).reverse.each do |book| %>
+    <div class="row">
+      <div class="col-md-1">
+	  <%= link_to image_tag(book.cover,data:{src:"holder.js/10%x30"},alt:"Book Cover"),book,class:"thumbnail" %>
+      </div>
+      <div class="col-md-11">
+        <a href="#" class="h3"><%= book.title %></a><br>
+	by <a href="#" class="h5"><%= book.author %></a><br><% user = User.find(book.user_id) %>
+	Added by: <%= user.username.upcase %> | <%= user.fullname.capitalize %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% else %>
+  <%= render 'shared/unsigned' %>
+<% end %>

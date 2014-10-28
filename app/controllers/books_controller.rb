@@ -7,19 +7,19 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new
-    @book.isbn = params[:books][:isbn]
-    @book.cover = params[:books][:cover]
-    @book.title = params[:books][:title]
-    @book.description = params[:books][:description]
-    @book.author = params[:books][:author]
-    @book.pages = params[:books][:pages]
-    @book.genre = params[:books][:genre]
+    @book.isbn = params[:book][:isbn]
+    @book.cover = params[:book][:cover]
+    @book.title = params[:book][:title]
+    @book.description = params[:book][:description]
+    @book.author = params[:book][:author]
+    @book.pages = params[:book][:pages]
+    @book.genres = params[:book][:genres] 
     @book.user_id = current_user.id
-    
     if @book.save
-     render 'show'
+      flash[:success] = "Book Created Successfully"
+      redirect_to @book
     else
-        render 'new'
+      render 'new'
     end
   end
 
@@ -37,6 +37,7 @@ class BooksController < ApplicationController
 
   def update
   end
+  
   def search
     @books = []
     
@@ -54,5 +55,4 @@ class BooksController < ApplicationController
       #@books = @books + @books_comments
     #end
   end
-
 end
