@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913140913) do
+ActiveRecord::Schema.define(version: 20141029131359) do
 
   create_table "books", force: true do |t|
     t.integer  "user_id",                                   null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140913140913) do
     t.text     "description",                               null: false
     t.string   "author",                                    null: false
     t.integer  "pages",                                     null: false
-    t.string   "genre",                                     null: false
+    t.string   "genres",                                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20140913140913) do
   end
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true, using: :btree
+
+  create_table "request_books", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "request_books", ["book_id"], name: "index_request_books_on_book_id", using: :btree
 
   create_table "users", force: true do |t|
     t.integer   "user_id"
