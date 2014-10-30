@@ -31,6 +31,7 @@ class RequestBooksController < ApplicationController
     @request_book.user_id = current_user.id
     respond_to do |format|
       if @request_book.save
+        RequestMailer.request_notify(@request_book,current_user).deliver
         format.html { redirect_to @request_book, notice: 'Request book was successfully created.' }
         format.json { render :show, status: :created, location: @request_book }
       else

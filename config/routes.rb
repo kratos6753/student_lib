@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'index#index' 
+  get '/requests', to:'index#requests'
   resources :users, only:[:show,:update]
   resources :sessions, only: [:create, :delete]
   resources :books

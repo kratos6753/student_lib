@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Book:</strong>
-  <%= @request_book.book %>
-</p>
-
-<%= link_to 'Edit', edit_request_book_path(@request_book) %> |
-<%= link_to 'Back', request_books_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1">
+      <%= link_to image_tag(@request_book.book.cover,data:{src:"holder.js/10%x30"},alt:"Book Cover"),book_path(@request_book.book_id),class:"thumbnail" %>
+    </div>
+    <div class="col-md-11">
+      <strong>Book:</strong>
+      <%= @request_book.book.title %><br>
+      <strong>Book Author(s):</strong>
+      <%= @request_book.book.author %><br>
+      <strong>Book Holder:</strong>
+      <%= User.find(@request_book.user_id).fullname %><br>
+    </div>
+  </div>
+</div>

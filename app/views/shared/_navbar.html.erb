@@ -28,6 +28,7 @@
             <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <%= current_user.fullname%> <b class="caret"></b></a>
             <ul class="dropdown-menu signin_div">
               <li><%= link_to "My profile", current_user %></li>
+              <li><%= link_to "My requests",requests_path  %></li>
               <li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
             </ul>
           </li>
