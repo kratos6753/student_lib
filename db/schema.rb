@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20141029131359) do
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true, using: :btree
 
+<<<<<<< HEAD
   create_table "request_books", force: true do |t|
     t.integer  "book_id"
     t.integer  "user_id"
