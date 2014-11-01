@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'index#index' 
   get '/requests', to:'index#requests'
+  get '/approvals', to:'index#approvals'
+  get '/isbn',to:'books#isbn_search'
+  get '/add',to:'books#isbn'
   resources :users, only:[:show,:update]
   resources :sessions, only: [:create, :delete]
   resources :books

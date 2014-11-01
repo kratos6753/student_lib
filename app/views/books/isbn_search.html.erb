@@ -1,0 +1,12 @@
+<%= @items.first.asin %><br>
+<% author = @items.first.item_attributes.author %>
+<% if author.kind_of?(Array) %>
+  <%= author.join(',') %>
+<% else %>
+  <%= author %>
+<% end %><br>
+<%= @items.first.item_attributes.number_of_pages %><br>
+<%= @items.first.item_attributes.title %><br>
+<%= @items.first.item_attributes.studio %><br>
+<%= strip_tags(@items.first.editorial_reviews.editorial_review.content) %><br>
+<%= image_tag(@items.first.medium_image.url) %><br>

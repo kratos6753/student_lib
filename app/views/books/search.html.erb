@@ -1,26 +1,16 @@
-
-
-<div >
-<% if @books and @books.length!=0 %>
-  <div class="">Here are the resultant articles for your search string : </div>
-  <br>
-
-		<% @books.uniq.sort!{|a,b| b.created_at <=> a.created_at }.each do |book| %>
-		  <%=  book.user_id %><br>
-		  <%= book.name  %><br>
-		  </hr>
-		<% end %>
-	<% end %>
-
-		<% if @books.length==0 %>
-		  <div class="book_div"><b>No Search results found.</b></div>
-		<% end %>
-<br>
-		<% if @books.length>10 %>
-		    <%= render 'shared/loadmore' %>
-		<% end %>
-		</div>
-
-<% else %>
-
-
+<div class="container-fluid">
+  <div class="row">
+    <% if @books and @books.length!=0 %>
+      <div>Here are the resultant articles for your search string : </div>
+        <% @books.uniq.sort!{|a,b| b.created_at <=> a.created_at }.each do |book| %>
+	  <%= book.title %><br></hr>
+        <% end %>
+    <% end %>
+    <% if @books.length==0 %>
+      <div class="book_div"><b>No Search results found.</b></div>
+    <% end %><br>
+    <% if @books.length>10 %>
+      <%= render 'shared/loadmore' %>
+    <% end %>
+  </div>
+</div>

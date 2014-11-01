@@ -15,3 +15,10 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+/*
+$(document).ready(function(){
+  $('.form-trigger').on('click',function(){
+    $('.form-show').hide('slow')
+    $('.form-hide').show('slow');
+  });
+});*/

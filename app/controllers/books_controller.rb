@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
   include SessionsHelper
-  
+  require 'asin'
+  include ASIN::Client
+
   def new
     @book = Book.new
   end
@@ -38,6 +40,14 @@ class BooksController < ApplicationController
   def update
   end
   
+  def isbn
+  end
+
+  def isbn_search
+    client = ASIN::Client.instance
+    @items = client.lookup params[:isbn]
+  end
+
   def search
     @books = []
     

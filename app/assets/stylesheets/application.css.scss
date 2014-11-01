@@ -20,7 +20,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   background: rgb(245,245,245) !important;
   height: 100%;
-  margin-top: 15px;
+  padding-top: 10px;
 }
 
 .navbar {
@@ -55,6 +55,10 @@ body {
   }
 
   }
+}
+
+.form-hide {
+  display: none;
 }
 
 /* Footer */

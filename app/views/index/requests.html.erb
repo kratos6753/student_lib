@@ -1,5 +1,12 @@
 <% if signed_in? %>
 <div class="container-fluid">
+ <% if @requests.count==0 %>
+  <div class="row">
+    <div class="col-md-12" style="background:#fff;padding:10px;font-size:150%;font-weight:400;">
+      <p class="text-center">No requests Found</p>
+    </div>
+  </div>
+ <% else %>
   <% @requests.each do |request| %>
     <div class="row">
       <div class="col-md-1">
@@ -9,10 +16,11 @@
         <a href="#" class="h3"><%= request.book.title %></a><br>
 	by <a href="#" class="h5"><%= request.book.author %></a><br><% user = User.find(request.user_id) %>
 	Added by: <%= user.username.upcase %> | <%= user.fullname.capitalize %><br>
-	Status: Still Processing.....!!!
+	Status: Still Processing.....!!! <%= button_to 'cancel',request,class:"btn btn-xs btn-danger",method: :delete,data:{confirm:'Are you sure?'} %>
       </div>
     </div>
   <% end %>
+ <% end %>
 </div>
 <% else %>
   <%= render 'shared/unsigned' %>

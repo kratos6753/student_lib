@@ -1,15 +1,9 @@
-<%= form_for(@book,method:'post',:html => { :class => "form-horizontal",:role => "form"}) do |f| %>
+<%= form_for(@book,method:'post',:html => { :class => "form-horizontal form-hide",:role => "form"}) do |f| %>
   <% if @book.errors.any? %>
     <% @book.errors.full_messages.each do |msg| %>
       <div class="alert alert-danger"><%= msg %></div>
     <% end %>
   <% end %>
-  <div class="form-group">
-    <%= f.label :isbn, class:"col-md-2 control-label" %>
-    <div class="col-md-10">
-      <%= f.text_field :isbn, class:"form-control", placeholder:"ISBN number" %>
-    </div>
-  </div>
   <div class="form-group">
     <%= f.label :cover, class:"col-md-2 control-label" %>
     <div class="col-md-10">
