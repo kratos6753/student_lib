@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/approvals', to:'index#approvals'
   get '/isbn',to:'books#isbn_search'
   get '/add',to:'books#isbn'
+  get '/accept',to:'request_books#accept'
   resources :users
   resources :sessions, only: [:create, :delete]
   resources :books

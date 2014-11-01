@@ -8,6 +8,6 @@ class IndexController < ApplicationController
   end
 
   def approvals
-    @approvals = Book.where(user_id:current_user.id).where(request:true)
+    @approvals = Book.where(user_id:current_user.id).where(request:1)
   end
 end

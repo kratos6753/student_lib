@@ -9,7 +9,7 @@
       <strong>Book Author(s):</strong>
       <%= @request_book.book.author %><br>
       <strong>Book Holder:</strong>
-      <%= User.find(@request_book.user_id).fullname %><br>
+      <%= User.find(Book.find(@request_book.book_id).user_id).fullname %><br>
     </div>
   </div>
 </div>

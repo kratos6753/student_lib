@@ -23,12 +23,18 @@ class RequestBooksController < ApplicationController
   def edit
   end
 
+  def accept
+    
+  end
+
   # POST /request_books
   # POST /request_books.json
   def create
     @request_book = RequestBook.new
     @request_book.book_id = params[:book_id]
     @request_book.user_id = current_user.id
+    @book = Book.find(params[:book_id])
+    @book.update(request:1)
     respond_to do |format|
       if @request_book.save
         RequestMailer.request_notify(@request_book,current_user).deliver
@@ -59,6 +65,8 @@ class RequestBooksController < ApplicationController
   # DELETE /request_books/1.json
   def destroy
     @request_book.destroy
+    @book = Book.find(@request_book.book_id)
+    @book.update(request:0)
     respond_to do |format|
       format.html { redirect_to requests_url, notice: 'Request book was successfully destroyed.' }
       format.json { head :no_content }
