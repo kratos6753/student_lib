@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/approvals', to:'index#approvals'
   get '/isbn',to:'books#isbn_search'
   get '/add',to:'books#isbn'
-  resources :users, only:[:show,:update]
+  resources :users
   resources :sessions, only: [:create, :delete]
   resources :books
   match '/signin',  to: 'sessions#new',         via: 'get'

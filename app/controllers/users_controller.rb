@@ -28,11 +28,7 @@ class UsersController < ApplicationController
   private
     def set_user
       @user = current_user
-      if @user.profile_picture == ""
-        @picture = "user-default-blue.png"
-      else
-        @picture = @user.profile_picture
-      end
+      @user.avatar.url ||= "user-default-blue.png"
     end
 
     def user_params 

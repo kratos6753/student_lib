@@ -43,6 +43,6 @@ gem 'jquery-turbolinks'
 gem 'hpricot'
 gem 'premailer-rails'
 gem 'autoprefixer-rails'
-
+gem "paperclip", "~> 4.2"
 gem 'asin'
 gem 'curb' # optional, see HTTPI
