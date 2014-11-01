@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     @book.description = params[:book][:description]
     @book.author = params[:book][:author]
     @book.pages = params[:book][:pages]
-    @book.genres = params[:book][:genres] 
+    @book.genre = params[:book][:genre] 
     @book.user_id = current_user.id
     if @book.save
       flash[:success] = "Book Created Successfully"

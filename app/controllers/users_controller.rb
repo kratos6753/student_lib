@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   private
     def set_user
       @user = current_user
-      @user.avatar.url ||= "user-default-blue.png"
+      #@user.avatar.url ||= "user-default-blue.png"
     end
 
     def user_params 

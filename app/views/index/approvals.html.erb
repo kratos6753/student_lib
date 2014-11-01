@@ -1,5 +1,4 @@
 Approval needed for the requested books<br><br>
-book1<br>
-book2<br>
-book3<br>
-book4<br>
+<% @approvals.each do |abook| %>
+  <%= abook.title %>
+<% end %>

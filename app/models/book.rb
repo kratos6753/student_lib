@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
   validates :title, presence: true, length:{maximum:100}
   validates :description, presence:true, length:{maximum:1000}
   validates :cover, allow_blank:true, format:{with:/\.(jpg|png|gif)\z/i}
-  validates :genres, presence: true
+  validates :genre, presence: true
   validates :author, presence: true
   validates :pages, presence:true, numericality:{only_integer:true}
 

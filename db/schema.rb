@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 20141029131359) do
     t.text     "description",                               null: false
     t.string   "author",                                    null: false
     t.integer  "pages",                                     null: false
-    t.string   "genres",                                    null: false
+    t.string   "genre",                                     null: false
+    t.boolean  "request",                                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,7 +46,6 @@ ActiveRecord::Schema.define(version: 20141029131359) do
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true, using: :btree
 
-<<<<<<< HEAD
   create_table "request_books", force: true do |t|
     t.integer  "book_id"
     t.integer  "user_id"
@@ -76,6 +76,10 @@ ActiveRecord::Schema.define(version: 20141029131359) do
     t.text      "usertype"
     t.integer   "notifications_count",             default: 0, null: false
     t.string    "typename",            limit: 40
+    t.string    "avatar_file_name"
+    t.string    "avatar_content_type"
+    t.integer   "avatar_file_size"
+    t.datetime  "avatar_updated_at"
   end
 
   add_index "users", ["username"], name: "UNIQUE", unique: true, using: :btree
