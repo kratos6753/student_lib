@@ -25,6 +25,26 @@ class BooksController < ApplicationController
     end
   end
 
+  def create_book_isbn
+    client = ASIN::Client.instance
+    @item = client.lookup params[:isbn]
+    @book = Book.new
+    @book.isbn = params[:isbn]
+    @book.cover = @item.first.medium_image.url
+    @book.title = @item.first.item_attributes.title
+    @book.description = @item.first.editorial_reviews.editorial_review.kind_of?(Array) ? @item.first.editorial_reviews.editorial_review[-1].content : @item.first.editorial_reviews.editorial_review.content 
+    @book.author = @item.first.item_attributes.author
+    @book.pages = @item.first.item_attributes.number_of_pages
+    @book.genre = "computer science"  #hard coding the genre for some time
+    @book.user_id = current_user.id
+    if @book.save
+      flash[:success] = "Book Created Successfully"
+      redirect_to @book
+    else
+      render isbn_search
+    end
+  end
+
   def show
     @book = Book.find(params[:id])
   end

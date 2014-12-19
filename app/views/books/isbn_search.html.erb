@@ -14,8 +14,9 @@
       <p><strong>ISBN :</strong> <%= @items.first.asin %></p>
       <p><strong>Pages :</strong> <%= @items.first.item_attributes.number_of_pages %></p>
       <p><strong>Publishers :</strong> <%= @items.first.item_attributes.studio %></p>
-      <p class="text-justify"><strong>Description :</strong> <%= strip_tags(@items.first.editorial_reviews.editorial_review.content) %></p>
-      <%= button_to "Add this book","#",class:"btn btn-xs btn-primary" %>
+      <% description = @items.first.editorial_reviews.editorial_review.kind_of?(Array) ? @items.first.editorial_reviews.editorial_review[-1].content : @items.first.editorial_reviews.editorial_review.content %>
+      <p class="text-justify"><strong>Description :</strong> <%= description %></p>
+      <a href="books/create/<%= @items.first.asin %>" class="btn btn-xs btn-primary">Add this Book</a>
     </div>
   </div>
 </div>
