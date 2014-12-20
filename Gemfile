@@ -46,3 +46,4 @@ gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.2"
 gem 'asin'
 gem 'curb' # optional, see HTTPI
+gem 'rest_in_place'

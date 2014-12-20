@@ -5,17 +5,17 @@ class UsersController < ApplicationController
   end
 
   def update
-      @user.nick = params[:user][:nick]
-      @user.room = params[:user][:room]
-      @user.hostel = params[:user][:hostel]
-      @user.email = params[:user][:email]
-      @user.contact = params[:user][:contact]
-      if @user.save
-	  flash[:success]="User Profile updated successfully"
-          redirect_to @user
-      else
-      	  render :edit
+    if @user.update_attributes!(user_params)
+      respond_to do |format|
+        format.html { redirect_to @user, flash[:success] = "User Profile updated successfully" }
+        format.json { render :json => @user }
       end
+    else
+      respond_to do |format|
+        format.html { render @user , flash[:warning] = "User Profile updated successfully" }
+        format.json { render :nothing => true }
+      end
+    end
   end
 
   def edit

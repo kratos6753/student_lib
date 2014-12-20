@@ -1,3 +1,16 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.edit,.edit-disable {
+	opacity: 0.4;
+	font-size: 1.2rem;
+}
+
+.edit-disable:hover {
+	cursor: not-allowed;
+}
+
+.edit:hover {
+	cursor: pointer;
+	opacity: 0.9;
+}

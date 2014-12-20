@@ -1,33 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <%= image_tag @user.avatar.url,size:"100x110" %>
+      <%= image_tag @user.avatar.url, size:"100x110" %>
     </div>
     <div class="col-md-6">
       <table class="table">
         <tr>
-          <td>Name</td><td><%= @user.fullname %></td>
-	</tr>
-	<tr>
-          <td>Nick</td><td><%= @user.nick %></td>
+          <td>Name</td>
+          <td><%= @user.fullname %>&nbsp;<span class="glyphicon glyphicon-pencil edit-disable"></span></td>
+	      </tr>
+	      <tr>
+          <td>Nick</td>
+          <td><span class="rest-in-place" data-url="update/<%= current_user.id %>" data-object="user" data-attribute="nick" data-placeholder="Enter Nick"><%= @user.nick %></span>&nbsp;<span class="glyphicon glyphicon-pencil edit"></span></td>
         </tr>
-	<tr>
-	  <td>Roll</td><td><%= @user.username %></td>
+	      <tr>
+	        <td>Roll</td>
+          <td><%= @user.username %>&nbsp;<span class="glyphicon glyphicon-pencil edit-disable"></span></td>
         </tr>
-	<tr>
-	  <td>Room</td><td><%= @user.room %></td>
+	      <tr>
+	        <td>Room</td>
+          <td><span class="rest-in-place" data-url="update/<%= current_user.id %>" data-object="user" data-attribute="room" data-placeholder="Enter Room Number"><%= @user.room %></span>&nbsp;<span class="glyphicon glyphicon-pencil edit"></span></td>
         </tr>
-	<tr>
-          <td>Hostel</td><td><%= @user.hostel %></td>
+	      <tr>
+          <td>Hostel</td>
+          <td><span class="rest-in-place" data-url="update/<%= current_user.id %>" data-object="user" data-attribute="hostel" data-placeholder="Enter Hostel"><%= @user.hostel %></span>&nbsp;<span class="glyphicon glyphicon-pencil edit"></span></td>
         </tr>
         <tr>
-	  <td>Email</td><td><%= @user.email %></td>
-	</tr>
-	<tr>
-	  <td>Phone</td><td><%= @user.contact %></td>
+	        <td>Email</td>
+          <td><span class="rest-in-place" data-url="update/<%= current_user.id %>" data-object="user" data-attribute="email" data-placeholder="Enter Email"><%= @user.email %></span>&nbsp;<span class="glyphicon glyphicon-pencil edit"></span></td>
+	      </tr>
+	      <tr>
+	        <td>Phone</td>
+          <td><span class="rest-in-place" data-url="update/<%= current_user.id %>" data-object="user" data-attribute="name" data-placeholder="Enter Phone Number"><%= @user.contact %></span>&nbsp;<span class="glyphicon glyphicon-pencil edit"></span></td>
         </tr>
       </table>
-      <%= link_to "Edit Profile",edit_user_path,class:"btn btn-primary" %><br> 
     </div>	
   </div>
 </div>

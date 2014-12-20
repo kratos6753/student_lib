@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'index#index' 
+  root 'index#index'
+  put '/users/update/:id', to: 'users#update' 
   get '/requests', to:'index#requests'
   get '/approvals', to:'index#approvals'
   get '/isbn', to:'books#isbn_search'

@@ -12,13 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require 'rest_in_place'
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-/*
+
 $(document).ready(function(){
-  $('.form-trigger').on('click',function(){
-    $('.form-show').hide('slow')
-    $('.form-hide').show('slow');
-  });
-});*/
+  //$('.form-trigger').on('click',function(){
+   // $('.form-show').hide('slow')
+   // $('.form-hide').show('slow');
+  //});
+	$('span.edit').click(function(){
+		$(this).prev().click();
+	});
+});
