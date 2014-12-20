@@ -3,6 +3,10 @@ class BooksController < ApplicationController
   require 'asin'
   include ASIN::Client
 
+  def index
+    @books = current_user.books
+  end
+
   def new
     @book = Book.new
   end

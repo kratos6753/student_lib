@@ -2,9 +2,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <%= render 'shared/search' %><hr>
+      <%= render 'shared/search' %>
     </div>
-  </div>
+  </div><hr>
   <% @books.order(:created_at).reverse.each do |book| %>
     <div class="row">
       <div class="col-md-1">
