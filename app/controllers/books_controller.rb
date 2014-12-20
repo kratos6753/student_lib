@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  include ApplicationHelper
   include SessionsHelper
   require 'asin'
   include ASIN::Client
@@ -69,7 +70,8 @@ class BooksController < ApplicationController
 
   def isbn_search
     client = ASIN::Client.instance
-    @items = client.lookup params[:isbn]
+    isbn = params[:isbn]
+    @items = ( isbn.length == 10 ) ? (client.lookup isbn) : (client.lookup convert_to_isbn10(isbn))
   end
 
   def search
