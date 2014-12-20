@@ -40,10 +40,11 @@ class SessionsController < ApplicationController
            :username => "cn=students,ou=bind,dc=ldap,dc=iitm,dc=ac,dc=in",
            :password => "rE11Bg_oO~iC"
          }
-=begin
+
          if ldap.bind
            filter = Net::LDAP::Filter.eq("uid", username)
            treebase = "dc=ldap, dc=iitm, dc=ac, dc=in"
+ 
            ldap.search(:base => treebase, :filter => filter) do |entry|
              puts "DN: #{entry.dn}"
              if entry.dn
@@ -66,13 +67,7 @@ class SessionsController < ApplicationController
                end
              end
            end
-          =end
          end
-=end    
-        @user = User.find_by(username: params[:session][:roll])
-        sign_in @user
-        redirect_to root_url
-        flash[:success] = "Welcome, Hacker"
        end
   
 
