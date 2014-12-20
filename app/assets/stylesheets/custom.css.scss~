@@ -1,0 +1,122 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+#footer
+{
+  position:absolute;
+  bottom:0px;
+  background-color:#e74c3c;
+  width:100%!important;
+}
+.navbar
+{
+  background-color:#e74c3c!important;
+  max-width:none!important;
+}
+.navbar-brand
+{
+  color:white !important;
+}
+.navbar-nav > li > a
+{
+  color:white!important;
+}
+.navbar-nav > li > a:hover
+{
+  color:black!important;
+}
+.sidebar
+{
+width:20%!important;
+  border-right:2px solid #e74c3c;
+  height:100%!important;
+  position:fixed!important;
+margin-top:1.2%;
+}
+.nav-sidebar>li>a
+{
+  color:#e74c3c;
+  text-align:center;
+  font-size:130%;
+  border-bottom:1px solid #e74c3c;
+  margin-left:-5%;
+}
+.nav-sidebar>li>a:hover
+{
+  color:white;
+  background-color:#c0392b!important;
+}
+.nav-sidebar
+{
+  margin-top:5%;
+}
+.dropdown>a
+{
+  background-color:transparent!important;
+}
+.bell>a:hover
+{
+  background-color:transparent!important;
+}
+.contain
+{
+max-width:none!important;
+}
+.search
+{
+margin-top:10%;
+}
+.isbn
+{
+margin-top:10%;
+}
+.control-label
+{
+padding-top:4px;
+}
+.book
+{
+margin-top:5%;
+}
+.sodhi
+{
+margin-left:5%;
+}
+.form
+{
+margin-top:5%;
+}
+.image
+{
+margin-left:2%;
+magin-top:40px;
+}
+.searchi
+{
+margin-top:10%;
+}
+.profile
+{
+padding-top:20px;
+padding-bottom:20px;
+}
+.request
+{
+margin-top:13%;
+}
+.paara
+{
+padding-left:5%;
+}
+.form
+{
+padding-top:20px!important;
+}
+.pform
+{
+margin-top:5%;
+width:40%!important;
+}
+.form
+{
+padding-top:-30px!important;
+}

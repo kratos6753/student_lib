@@ -1,4 +1,3 @@
-<%= render "shared/sidebar" %>
 <% if signed_in? %>
 <div class="container-fluid">
  <% if @requests.count==0 %>
