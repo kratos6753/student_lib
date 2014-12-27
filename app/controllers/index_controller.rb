@@ -1,7 +1,6 @@
 class IndexController < ApplicationController
   def index
   	current_user_id = current_user.id
-  	puts "current user id = ", current_user_id
     @books = Book.where("user_id != #{current_user_id}")
   end
 
