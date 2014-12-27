@@ -44,5 +44,5 @@ gem 'hpricot'
 gem 'premailer-rails'
 gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.2"
-gem 'asin'
+gem 'goodreads'
 gem 'curb' # optional, see HTTPI

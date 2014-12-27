@@ -1,22 +1,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
-      <%= image_tag(@items.first.medium_image.url) %><br>
+      <%= image_tag(@book.small_image_url) %><br>
     </div>
     <div class="col-md-10">
-      <p><strong><%= @items.first.item_attributes.title %></strong></p>
-      <p><strong>By</strong> <% author = @items.first.item_attributes.author %>
-      <% if author.kind_of?(Array) %>
-        <%= author.join(',') %>
-      <% else %>
-        <%= author %>
-      <% end %></p>
-      <p><strong>ISBN :</strong> <%= @items.first.asin %></p>
-      <p><strong>Pages :</strong> <%= @items.first.item_attributes.number_of_pages %></p>
-      <p><strong>Publishers :</strong> <%= @items.first.item_attributes.studio %></p>
-      <% description = @items.first.editorial_reviews.editorial_review.kind_of?(Array) ? @items.first.editorial_reviews.editorial_review[-1].content : @items.first.editorial_reviews.editorial_review.content %>
-      <p class="text-justify"><strong>Description :</strong> <%= description %></p>
-      <a href="books/create/<%= @items.first.asin %>" class="btn btn-xs btn-primary">Add this Book</a>
+      <p><strong><%= @book.title %></strong></p>
+      <p><strong>By</strong><% authors = @book.authors.first[1].kind_of?(Array) ? @book.authors.first[1].map do |author| author.name end : Array.new.push(@book.authors.first[1].name) %>
+      <%= authors.join(', ') %>
+      </p>
+      <p><strong>ISBN :</strong> <%= @book.isbn %></p>
+      <p><strong>Pages :</strong> <%= @book.num_pages %></p>
+      <p><strong>Publisher :</strong> <%= @book.publisher %></p>
+      <p class="text-justify"><strong>Description :</strong> <%= strip_tags(@book.description) %></p>
+      <a href="books/create/<%= @book.isbn %>" class="btn btn-xs btn-primary">Add this Book</a>
     </div>
   </div>
 </div>

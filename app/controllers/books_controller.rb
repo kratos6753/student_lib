@@ -1,8 +1,6 @@
 class BooksController < ApplicationController
   include ApplicationHelper
   include SessionsHelper
-  require 'asin'
-  include ASIN::Client
 
   def index
     @books = current_user.books
@@ -31,15 +29,16 @@ class BooksController < ApplicationController
   end
 
   def create_book_isbn
-    client = ASIN::Client.instance
-    @item = client.lookup params[:isbn]
     @book = Book.new
-    @book.isbn = params[:isbn]
-    @book.cover = @item.first.medium_image.url
-    @book.title = @item.first.item_attributes.title
-    @book.description = @item.first.editorial_reviews.editorial_review.kind_of?(Array) ? @item.first.editorial_reviews.editorial_review[-1].content : @item.first.editorial_reviews.editorial_review.content 
-    @book.author = @item.first.item_attributes.author
-    @book.pages = @item.first.item_attributes.number_of_pages
+    client = Goodreads.new(Goodreads.configuration)
+    item = client.book_by_isbn(params[:isbn])
+    @book.isbn = item.isbn
+    @book.cover = item.small_image_url
+    @book.title = item.title
+    @book.description = item.description
+    authors = item.authors.first[1].kind_of?(Array) ? item.authors.first[1].map do |author| author.name end : Array.new.push(item.authors.first[1].name)
+    @book.author = authors.join(',')
+    @book.pages = item.num_pages
     @book.genre = "computer science"  #hard coding the genre for some time
     @book.user_id = current_user.id
     if @book.save
@@ -69,9 +68,8 @@ class BooksController < ApplicationController
   end
 
   def isbn_search
-    client = ASIN::Client.instance
-    isbn = params[:isbn]
-    @items = ( isbn.length == 10 ) ? (client.lookup isbn) : (client.lookup convert_to_isbn10(isbn))
+    client = Goodreads.new(Goodreads.configuration)
+    @book = client.book_by_isbn(params[:isbn])
   end
 
   def search

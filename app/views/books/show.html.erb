@@ -7,8 +7,8 @@
     </div>
     <div class="col-md-11">
       <a href="#" class="h3"><%= @book.title %></a><br>
-      by <a href="#" class="h5"><%= @book.author %></a><br>
-      Description: <%= @book.description %>
+      <strong>by</strong> <a href="#" class="h5"><%= @book.author %></a><br>
+      <strong>Description:</strong> <%= strip_tags(@book.description) %>
     </div>
   </div>
 </div>
