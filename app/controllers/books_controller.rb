@@ -32,11 +32,11 @@ class BooksController < ApplicationController
     @book = Book.new
     client = Goodreads.new(Goodreads.configuration)
     item = client.book_by_isbn(params[:isbn])
-    @book.isbn = item.isbn
+    @book.isbn = item.isbn.size == 0 ? item.isbn13 : item.isbn
     @book.cover = item.small_image_url
     @book.title = item.title
     @book.description = item.description
-    authors = item.authors.first[1].kind_of?(Array) ? item.authors.first[1].map do |author| author.name end : Array.new.push(item.authors.first[1].name)
+    authors = item.authors.first[1].kind_of?(Array) ? (item.authors.first[1].map do |author| author.name end) : Array.new.push(item.authors.first[1].name)
     @book.author = authors.join(',')
     @book.pages = item.num_pages
     @book.genre = "computer science"  #hard coding the genre for some time
@@ -45,7 +45,8 @@ class BooksController < ApplicationController
       flash[:success] = "Book Created Successfully"
       redirect_to @book
     else
-      render isbn_search
+      flash[:warning] = 'Book Cannot be Created'
+      render 'isbn'
     end
   end
 

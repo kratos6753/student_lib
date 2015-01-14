@@ -52,8 +52,7 @@ body {
   .form_container {
     .form-control {
       border-radius: none !important;
-  }
-
+    }
   }
 }
 
@@ -63,9 +62,8 @@ body {
 
 /* Footer */
 #footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
-  .footer-container {
-  
-}
+  .footer-container { 
+  }
 }

@@ -1,7 +1,9 @@
 class IndexController < ApplicationController
   def index
-  	current_user_id = current_user.id
-    @books = Book.where("user_id != #{current_user_id}")
+  	if signed_in?
+      current_user_id = current_user.id
+      @books = Book.where("user_id != #{current_user_id}")
+    end
   end
 
   def requests

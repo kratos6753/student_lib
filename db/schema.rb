@@ -13,73 +13,73 @@
 
 ActiveRecord::Schema.define(version: 20141029131359) do
 
-  create_table "books", force: true do |t|
-    t.integer  "user_id",                                   null: false
-    t.string   "isbn"
-    t.string   "cover",       default: "default-cover.png"
-    t.string   "title",                                     null: false
-    t.text     "description",                               null: false
-    t.string   "author",                                    null: false
-    t.integer  "pages",                                     null: false
-    t.string   "genre",                                     null: false
-    t.boolean  "request",                                   null: false
+  create_table "books", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4,                                   null: false
+    t.string   "isbn",        limit: 255
+    t.string   "cover",       limit: 255,   default: "default-cover.png"
+    t.string   "title",       limit: 255,                                 null: false
+    t.text     "description", limit: 65535,                               null: false
+    t.string   "author",      limit: 255,                                 null: false
+    t.integer  "pages",       limit: 4,                                   null: false
+    t.string   "genre",       limit: 255,                                 null: false
+    t.boolean  "request",     limit: 1,                                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
 
-  create_table "books_genres", id: false, force: true do |t|
-    t.integer "genre_id", null: false
-    t.integer "book_id",  null: false
+  create_table "books_genres", id: false, force: :cascade do |t|
+    t.integer "genre_id", limit: 4, null: false
+    t.integer "book_id",  limit: 4, null: false
   end
 
   add_index "books_genres", ["book_id", "genre_id"], name: "index_books_genres_on_book_id_and_genre_id", unique: true, using: :btree
   add_index "books_genres", ["genre_id"], name: "index_books_genres_on_genre_id", using: :btree
 
-  create_table "genres", force: true do |t|
-    t.string   "name",        limit: 45, null: false
-    t.text     "description"
+  create_table "genres", force: :cascade do |t|
+    t.string   "name",        limit: 45,    null: false
+    t.text     "description", limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true, using: :btree
 
-  create_table "request_books", force: true do |t|
-    t.integer  "book_id"
-    t.integer  "user_id"
+  create_table "request_books", force: :cascade do |t|
+    t.integer  "book_id",    limit: 4
+    t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "request_books", ["book_id"], name: "index_request_books_on_book_id", using: :btree
 
-  create_table "users", force: true do |t|
-    t.integer   "user_id"
-    t.string    "username",            limit: 15,              null: false
-    t.string    "fullname",            limit: 80,              null: false
-    t.integer   "room"
-    t.string    "hostel",              limit: 40
-    t.text      "profile_picture",                             null: false
-    t.datetime  "time_of_reg"
-    t.string    "current_mess",        limit: 40
-    t.string    "comment",             limit: 50
-    t.string    "remember_token",      limit: 128
-    t.string    "bgroup",              limit: 5
-    t.integer   "contact",             limit: 8,   default: 0
-    t.string    "email"
-    t.string    "nick"
-    t.string    "gender",              limit: 1
-    t.string    "picaddress",          limit: 50
-    t.timestamp "updated_timestamp"
-    t.text      "usertype"
-    t.integer   "notifications_count",             default: 0, null: false
-    t.string    "typename",            limit: 40
-    t.string    "avatar_file_name"
-    t.string    "avatar_content_type"
-    t.integer   "avatar_file_size"
-    t.datetime  "avatar_updated_at"
+  create_table "users", force: :cascade do |t|
+    t.integer  "user_id",             limit: 4
+    t.string   "username",            limit: 15,                null: false
+    t.string   "fullname",            limit: 80,                null: false
+    t.integer  "room",                limit: 4
+    t.string   "hostel",              limit: 40
+    t.text     "profile_picture",     limit: 65535,             null: false
+    t.datetime "time_of_reg"
+    t.string   "current_mess",        limit: 40
+    t.string   "comment",             limit: 50
+    t.string   "remember_token",      limit: 128
+    t.string   "bgroup",              limit: 5
+    t.integer  "contact",             limit: 8,     default: 0
+    t.string   "email",               limit: 255
+    t.string   "nick",                limit: 255
+    t.string   "gender",              limit: 1
+    t.string   "picaddress",          limit: 50
+    t.datetime "updated_timestamp"
+    t.text     "usertype",            limit: 65535
+    t.integer  "notifications_count", limit: 4,     default: 0, null: false
+    t.string   "typename",            limit: 40
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["username"], name: "UNIQUE", unique: true, using: :btree

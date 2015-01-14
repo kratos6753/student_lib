@@ -5,14 +5,14 @@
     </div>
     <div class="col-md-10">
       <p><strong><%= @book.title %></strong></p>
-      <p><strong>By</strong><% authors = @book.authors.first[1].kind_of?(Array) ? @book.authors.first[1].map do |author| author.name end : Array.new.push(@book.authors.first[1].name) %>
+      <p><strong>By</strong><% authors = @book.authors.first[1].kind_of?(Array) ? (@book.authors.first[1].map do |author| author.name end) : Array.new.push(@book.authors.first[1].name) %>
       <%= authors.join(', ') %>
       </p>
-      <p><strong>ISBN :</strong> <%= @book.isbn %></p>
+      <p><strong>ISBN :</strong> <%= @book.isbn.size == 0 ? @book.isbn13 : @book.isbn %></p>
       <p><strong>Pages :</strong> <%= @book.num_pages %></p>
       <p><strong>Publisher :</strong> <%= @book.publisher %></p>
       <p class="text-justify"><strong>Description :</strong> <%= strip_tags(@book.description) %></p>
-      <a href="books/create/<%= @book.isbn %>" class="btn btn-xs btn-primary">Add this Book</a>
+      <a href="books/create/<%= @book.isbn.size == 0 ? @book.isbn13 : @book.isbn %>" class="btn btn-xs btn-primary">Add this Book</a>
     </div>
   </div>
 </div>
