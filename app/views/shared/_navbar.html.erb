@@ -1,37 +1,71 @@
-<nav class="navbar navbar-fixed-top navbar-collapse " role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Home", root_path, class:"navbar-brand" %>
-    </div>
-      <ul class="nav navbar-nav navbar-right">
- 	<% if signed_in? %>
-	  <li><%= link_to "My Books", books_path %></li>
-	  <li class="dropdown">
-	    <a href="#" data-toggle="dropdown">Add a Book</a>
-	    <ul class="dropdown-menu">
-              <li><%= link_to "via ISBN", add_path %></li>
-              <li><%= link_to "via Book details", new_book_path %></li>
-	    </ul>
-	  </li>
-	   <li class="dropdown">
-            <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <%= current_user.fullname%> <b class="caret"></b></a>
-            <ul class="dropdown-menu signin_div">
-              <li><%= link_to "My profile", current_user %></li>
-              <li><%= link_to "My requests",requests_path  %></li>
-              <li><%= link_to "Pending approvals",approvals_path  %></li>
-              <li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
-            </ul>
-           </li>
-        <% else %>
-          <li><%= link_to "Sign In", signin_path %></li>
-        <% end %>
-        </ul>
-    </div>
-  </nav>
+<div id="skrollr-body">
+	<div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
+        	<nav>
+                    <ul>
+                        <li class='col-xs-5 col-md-3 pull-left'>
+                            <span class='col-xs-12' id='dnb_logo'>
+                                <p><b>Students&nbsp;</b>Portal</p>
+                            </span>
+                        </li>
+		        <li class='col-xs-5 col-md-6'>
+                            <div class="input-group col-xs-12">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go</button>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+	</div>
+	<div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
+		<nav>
+                	<span class='col-xs-2'>
+				<div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Student<b>&nbsp;Library</b>&nbsp;
+				</div>
+			</span>
+			<% if !signed_in? %>
+				<div class='pull-right'>
+					<ul class='col-xs-6'>
+                                        	<li class='col-xs-12 col-sm-3 col-md-3 col-lg-2'>
+                                                	<div class="btn2">
+          							<%= link_to "Sign In", signin_path %>
+							</div>
+						</li>
+					</ul>
+				</div>
+			<% else %>
+			<div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
+                       		<a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+                        		<span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.fullname%><span class="caret"></span>
+                            		</span>
+                        	</a>
+                        	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            	<li><%= link_to "My profile", current_user %></li>
+					            <li><%= link_to "My requests",requests_path  %></li>
+              				    <li><%= link_to "Pending approvals",approvals_path  %></li>
+              				    <li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
+                        	</ul>
+                        </div>
+				<ul class='col-xs-3 pull-right'>
+					<li class='col-xs-12 col-sm-6 col-md-6 col-lg-5'>
+						<div class="btn2">
+                            <%= link_to "My Books", books_path %>
+						</div>
+					</li>
+					 <li class='hidden-xs col-sm-6 col-md-6 col-lg-5'>
+                                                <div class='btn2'>
+                                                        <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
+                                                        </a>                            
+                               				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li><%= link_to "via ISBN", add_path %></li>
+              							<li><%= link_to "via Book details", new_book_path %></li>
+                              				</ul>
+                            			</div>
+                        		</li>
+                    		</ul>
+			</div>
+			<% end %>
+                </nav>
+	</div>
+</div>

@@ -18,7 +18,9 @@
 html,
 body {
   font-family: 'Open Sans', sans-serif;
+  background: rgb(245,245,245) !important;
   height: 100%;
+  padding-top: 10px;
 }
 
 .navbar {

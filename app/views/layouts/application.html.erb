@@ -5,14 +5,18 @@
   <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'skrollr.stylesheets', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'skrollr.js', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'iitm.ico' %>
 </head>
 <body>
 <%= render "shared/navbar" %>
+<div class='content col-xs-10 col-xs-offset-1'>
 <%= yield %>
-
+</div>
 <%= render "shared/footer"%>
 
+    <script >skrollr.init();</script>
 </body>
 </html>
