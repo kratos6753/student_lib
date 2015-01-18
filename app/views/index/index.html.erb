@@ -1,8 +1,6 @@
 <% if signed_in? %>
-	<%= render "shared/sidebar" %>
-<div class="col-md-8 col-md-offset-3 search">
+<div class="col-md-8 search">
       <%= render 'shared/search' %>
-    <hr>
     <%= render partial: 'books/books', locals: { books: @books } %>
 </div>
 <% else %>

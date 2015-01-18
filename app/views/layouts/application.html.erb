@@ -12,11 +12,12 @@
 </head>
 <body>
 <%= render "shared/navbar" %>
-<div class='content col-xs-10 col-xs-offset-1'>
+<div class='content'>
 <%= yield %>
 </div>
-<%= render "shared/footer"%>
-
-    <script >skrollr.init();</script>
+<script >skrollr.init();</script>
 </body>
+<footer>
+<%= render "shared/footer"%>
+</footer>
 </html>
