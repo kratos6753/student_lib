@@ -10,7 +10,6 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :pages, null:false
       t.string :genre, null:false
       t.boolean :request, null:false 
-
       t.timestamps
     end
     add_index :books, :user_id

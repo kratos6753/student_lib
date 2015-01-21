@@ -215,7 +215,6 @@ form_container
 
 .dropdown ul{
 background-color: rgba(255,255,255,0.9);
-border: 1px solid #c0392b;
 }
 .dropdown:hover ul{
 display: block;
@@ -258,4 +257,17 @@ right:10%;
 .sform
 {
 margin-top:13%;
+}
+.isb
+{
+font-size:200%;
+color:#e74c3c;
+position:relative;
+top:47px;
+margin-left:4%;
+}
+.bookform
+{
+position:absolute;
+top:120px;
 }

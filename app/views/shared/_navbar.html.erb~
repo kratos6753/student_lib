@@ -37,7 +37,7 @@
 			<% else %>
 			<div class="hidden-sm hidden-xs col-md-2 dropdown pull-right"><!--include class dropdown here to get the dropdown on hover-->
                        		<a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-                        		<span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.fullname %><span class="caret"></span>
+                        		<span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.hostel %><span class="caret"></span>
                             		</span>
                         	</a>
                         	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">

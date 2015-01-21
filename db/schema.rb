@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(version: 20141029131359) do
 
   create_table "books", force: true do |t|
-    t.integer  "user_id",                                   null: false
-    t.string   "isbn"
-    t.string   "cover",       default: "default-cover.png"
-    t.string   "title",                                     null: false
-    t.text     "description",                               null: false
-    t.string   "author",                                    null: false
-    t.integer  "pages",                                     null: false
-    t.string   "genre",                                     null: false
-    t.boolean  "request",                                   null: false
+    t.string   "name",                                                 null: false
+    t.string   "author",                                               null: false
+    t.integer  "pages"
+    t.text     "description"
+    t.string   "isbn",        limit: 15,                               null: false
+    t.string   "genre",       limit: 20,                               null: false
+    t.string   "title",       limit: 30,                               null: false
+    t.string   "cover",       limit: 30, default: "default-cover.png", null: false
+    t.integer  "user_id",                                              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -75,11 +75,6 @@ ActiveRecord::Schema.define(version: 20141029131359) do
     t.timestamp "updated_timestamp"
     t.text      "usertype"
     t.integer   "notifications_count",             default: 0, null: false
-    t.string    "typename",            limit: 40
-    t.string    "avatar_file_name"
-    t.string    "avatar_content_type"
-    t.integer   "avatar_file_size"
-    t.datetime  "avatar_updated_at"
   end
 
   add_index "users", ["username"], name: "UNIQUE", unique: true, using: :btree

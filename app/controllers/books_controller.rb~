@@ -72,7 +72,6 @@ class BooksController < ApplicationController
     client = ASIN::Client.instance
     isbn = params[:isbn]
     @items = ( isbn.length == 10 ) ? (client.lookup isbn) : (client.lookup convert_to_isbn10(isbn))
-    @img   = @items.first.medium_image.url
   end
 
   def search
