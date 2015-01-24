@@ -28,40 +28,39 @@
                     <li class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
                         <div class="btn2">
           				  <%= link_to "Sign In", signin_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
-							</div>
-						</li>
-					</ul>	
+						</div>
+					</li>
+				</ul>	
 			<% else %>
                 <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right"><!--include class dropdown here to get the dropdown on hover-->
                     <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
                         <span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.fullname %><span class="caret"></span></span>
                     </a>
-                        	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            		    <li><%= link_to "My profile", current_user %></li>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><%= link_to "My profile", current_user %></li>
 					    <li><%= link_to "My requests",requests_path  %></li>
-              				    <li><%= link_to "Pending approvals",approvals_path  %></li>
-              				    <li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
-                        	</ul>
-                        </div>
+              			<li><%= link_to "Pending approvals",approvals_path  %></li>
+              			<li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
+                    </ul>
+                </div>
 				<ul class='col-xs-3 pull-right'>
 					<li class='col-xs-12 col-sm-6 col-md-6 col-lg-5'>
 						<div class="btn2" >
-                            			<%= link_to "My Books", books_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
+                            <%= link_to "My Books", books_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
 						</div>
 					</li>
-					 <li class='hidden-xs col-sm-6 col-md-6 col-lg-5'>
-                                                <div class='btn2 dropdown'>
-                                                        <a class="curs  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
-                                                        </a>                            
-                               				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					<li class='hidden-xs col-sm-6 col-md-6 col-lg-5'>
+                        <div class='btn2 dropdown'>
+                            <a class="curs  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
+                            </a>                            
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li><%= link_to "via ISBN", add_path %></li>
-              							<li><%= link_to "via Book details", new_book_path %></li>
-                              				</ul>
-                            			</div>
-                        		</li>
-                    		</ul>
-			</div>
+              					<li><%= link_to "via Book details", new_book_path %></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
 			<% end %>
-                </nav>
+        </nav>
 	</div>
 </div>

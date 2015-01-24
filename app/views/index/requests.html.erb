@@ -1,27 +1,26 @@
-
 <% if signed_in? %>
 <div class="container-fluid">
- <% if @requests.count==0 %>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3 request" style="background:#fff;padding:10px;font-size:150%;font-weight:400;">
-      <p class="text-center">No requests Found</p>
-    </div>
-  </div>
- <% else %>
-  <% @requests.each do |request| %>
+  <% if @requests.count==0 %>
     <div class="row">
-      <div class="col-md-1">
-	<%= link_to image_tag(request.book.cover,data:{src:"holder.js/10%x30"},alt:"Book Cover"),request.book,class:"thumbnail" %>
-      </div>
-      <div class="col-md-11">
-        <a href="#" class="h3"><%= request.book.title %></a><br>
-	by <a href="#" class="h5"><%= request.book.author %></a><br><% user = User.find(Book.find(request.book_id).user_id) %>
-	Added by: <%= user.username.upcase %> | <%= user.fullname.capitalize %><br>
-	Status: Still Processing.....!!! <%= button_to 'cancel',request,class:"btn btn-xs btn-danger",method: :delete,data:{confirm:'Are you sure?'} %>
+      <div class="col-md-6 col-md-offset-3 request" style="background:#fff;padding:10px;font-size:150%;font-weight:400;">
+        <p class="text-center">No requests Found</p>
       </div>
     </div>
+  <% else %>
+    <% @requests.each do |request| %>
+      <div class="row">
+        <div class="col-md-1">
+          <%= link_to image_tag(request.book.cover,data:{src:"holder.js/10%x30"},alt:"Book Cover"),request.book,class:"thumbnail" %>
+        </div>
+        <div class="col-md-11">
+          <a href="#" class="h3"><%= request.book.title %></a><br>
+  	      by <a href="#" class="h5"><%= request.book.author %></a><br><% user = User.find(Book.find(request.book_id).user_id) %>
+  	      Added by: <%= user.username.upcase %> | <%= user.fullname.capitalize %><br>
+  	      Status: Still Processing.....!!! <%= button_to 'cancel',request,class:"btn btn-xs btn-danger",method: :delete,data:{confirm:'Are you sure?'} %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
- <% end %>
 </div>
 <% else %>
   <%= render 'shared/unsigned' %>

@@ -6,8 +6,8 @@
       </div>
       <div class="col-md-11">
         <a href="#" class="h3"><%= abook.title %></a><br>
-	by <a href="#" class="h5"><%= abook.author %></a><br><% user = User.find(abook.user_id) %>
-	<%= button_to "Approve",accept_path(book_id:abook),class:"btn btn-xs btn-primary" %>
+	      by <a href="#" class="h5"><%= abook.author %></a><br><% user = User.find(abook.user_id) %>
+	      <%= button_to "Approve",accept_path(book_id:abook),class:"btn btn-xs btn-primary" %>
       </div>
     <% end %>
   </div>

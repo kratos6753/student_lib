@@ -11,8 +11,8 @@ class Book < ActiveRecord::Base
   validates :author, presence: true
   validates :pages, presence:true, numericality:{only_integer:true}
 
-   def self.search(search, designation)
+  def self.search(search, designation)
     search_condition = "%" + search + "%"
     where("#{designation} LIKE ?", "%#{search}%")
-   end
+  end
 end

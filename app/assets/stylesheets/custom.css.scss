@@ -1,137 +1,131 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
- #dnb_sec 
+#dnb_sec 
 {
-                -skrollr-animation-name:animation1;
-            }
-
-            @-skrollr-keyframes animation1 {
-                0 {
-                    margin-top:0px;
-                    position:relative;
-                    background-color:#e74c3c;
-                }
-
-                top {
-                    margin-top:0px;
-                    position:fixed;
-                    background-color:rgba(255, 255, 255,0.99);
-                }
-            }
+     -skrollr-animation-name:animation1;
+}
+@-skrollr-keyframes animation1
+{
+    0
+    {
+        margin-top:0px;
+        position:relative;
+        background-color:#e74c3c;
+    }
+    top
+    {
+        margin-top:0px;
+        position:fixed;
+        background-color:rgba(255, 255, 255,0.99);
+    }
+}
 body
 {
-padding-bottom:70px;
+    padding-bottom:70px;
 }
 .dropdown>a
 {
-  background-color:transparent!important;
+    background-color:transparent!important;
 }
 .bell>a:hover
 {
-  background-color:transparent!important;
+    background-color:transparent!important;
 }
 .contain
 {
-max-width:none!important;
+    max-width:none!important;
 }
 .search
 {
-margin-top:10%;
+    margin-top:10%;
 }
 .isbn
 {
-margin-top:10%;
+    margin-top:10%;
 }
 .control-label
 {
-padding-top:4px;
+    padding-top:4px;
 }
 .book
 {
-margin-top:5%;
+    margin-top:5%;
 }
 .sodhi
 {
-margin-left:5%;
+    margin-left:5%;
 }
 .form
 {
-margin-top:5%;
+    margin-top:5%;
 }
 .image
 {
-margin-left:2%;
-magin-top:40px;
+    margin-left:2%;
+    magin-top:40px;
 }
 .profile
 {
-padding-top:20px;
-padding-bottom:20px;
+    padding-top:20px;
+    padding-bottom:20px;
 }
 .request
 {
-margin-top:13%;
+    margin-top:13%;
 }
 .paara
 {
-padding-left:5%;
+    padding-left:5%;
 }
 .form
 {
-padding-top:20px!important;
+    padding-top:20px!important;
 }
 .pform
 {
-margin-top:5%;
-width:40%!important;
+    margin-top:5%;
+    width:40%!important;
 }
 .form
 {
-padding-top:-30px!important;
+    padding-top:-30px!important;
 }
 .udiv
 {
-margin-left:3%;
-}
-.button
-{
-
+    margin-left:3%;
 }
 .button1
 {
-width:30%;
+    width:30%;
 }
 .btn-xlarge
 {
-padding:5px 15px!important;
-font-size:30px!important;
+    padding:5px 15px!important;
+    font-size:30px!important;
 }
 .searchbutton
 {
-height:60px;
+    height:60px;
 }
 .bs
 {
-color:#e74c3c;
-font-size:400%;
+    color:#e74c3c;
+    font-size:400%;
 }
-
-/*Site Color Constant - Change only the below property for different sites */
-.dnb_secondary li:hover{
+.dnb_secondary li:hover
+{
     border-top: 2px solid #c0392b;
 }
-.dnb_secondary{
+.dnb_secondary
+{
     box-shadow: 0px 3px 0px #c0392b,0px 2px 5px #c0392b;
 }
-
-/* General Properties */
 form_container
 {
-  width:30%;
+    width:30%;
 }
-
-/* Primary Navbar Properties */
-#dnb_primary{
+#dnb_primary
+{
     height: auto;
     position: relative;
     background-color:#fff;
@@ -139,42 +133,48 @@ form_container
     z-index: 99;
     padding-bottom: 0.5em;
 }
-#dnb_primary ul{
+#dnb_primary ul
+{
     margin-top:0.5em;
     padding-left: 0px;
 }
-#dnb_primary li{
+#dnb_primary li
+{
     display: inline;
 }
-#dnb_primary a{
+#dnb_primary a
+{
     color: #000;
     text-decoration: none;
 }
-#dnb_primary .btn:hover a{
+#dnb_primary .btn:hover a
+{
     color: #BBB;
 }
-
-/* Primary Navbar Components */
-#dnb_logo{
+#dnb_logo
+{
     font-size: 1.7em;
 }
-#dnb_logo p{
+#dnb_logo p
+{
     position: relative;
     top:50%;
     margin-bottom: auto;
 }
-.dropdown-menu{
+.dropdown-menu
+{
     z-index: 99;
 }
-.dnb_id{
+.dnb_id
+{
     padding-left: 5px;
 }
-
-/* Secondary Navbar Properties */
-.dnb_secondary a{
+.dnb_secondary a
+{
     text-decoration: none;
 }
-.dnb_secondary{
+.dnb_secondary
+{
     box-sizing: border-box;
     width: 100%;
     height:40px;
@@ -183,18 +183,18 @@ form_container
     margin-top: auto;
     z-index: 98;
 }
-
-.dnb_secondary ul{
+.dnb_secondary ul
+{
     list-style-type: none;
     margin-bottom: 0px;
     box-sizing: border-box;
 }
-
-.dnb_secondary li{
+.dnb_secondary li
+{
     border-top: 2px solid rgba(255, 255, 255,0);
 }
-/* Secondary Navbar Component Properties */
-.btn2 {
+.btn2
+{
     color: #000;
     font-size: 0.925em;
     font-weight: 200;
@@ -204,70 +204,69 @@ form_container
     margin-bottom: 10px;
     margin-top: 5px;
 }
-#dnb_secondary_logo{
+#dnb_secondary_logo
+{
     font-size: 1.1em;
     text-align: left;
     margin-bottom: 0px;
 }
-
-/* Content Properies */
-
-
-.dropdown ul{
-background-color: rgba(255,255,255,0.9);
+.dropdown ul
+{
+    background-color: rgba(255,255,255,0.9);
 }
-.dropdown:hover ul{
-display: block;
-margin-top: -5px;
+.dropdown:hover ul
+{
+    display: block;
+    margin-top: -5px;
 }
 .foot
 {
-background-color:#e74c3c!important;
+    background-color:#e74c3c!important;
 }
 .foot>li>a
 {
-color:white;
+    color:white;
 }
 .foot>li>a:hover
 {
-color:black;
+    color:black;
 }
 #footer
 {
-width:100%;
+    width:100%;
 }
 .curs
 {
-cursor:pointer;
-cursor:hand;
+    cursor:pointer;
+    cursor:hand;
 }
 .btn-default
 {
-background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
 }
 .btn-default:hover
 {
-background:#e0e0e0!important;
+    background:#e0e0e0!important;
 }
 .total
 {
-position:relative;
-right:10%;
+    position:relative;
+    right:10%;
 }
 .sform
 {
-margin-top:13%;
+    margin-top:13%;
 }
 .isb
 {
-font-size:200%;
-color:#e74c3c;
-position:relative;
-top:47px;
-margin-left:4%;
+    font-size:200%;
+    color:#e74c3c;
+    position:relative;
+    top:47px;
+    margin-left:4%;
 }
 .bookform
 {
-position:absolute;
-top:120px;
+    position:absolute;
+    top:120px;
 }

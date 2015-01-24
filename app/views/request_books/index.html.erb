@@ -1,5 +1,4 @@
 <h1>Listing request_books</h1>
-
 <table>
   <thead>
     <tr>
@@ -7,7 +6,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @request_books.each do |request_book| %>
       <tr>
@@ -19,7 +17,5 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Request book', new_request_book_path %>

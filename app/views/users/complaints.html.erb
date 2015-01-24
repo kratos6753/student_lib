@@ -4,20 +4,17 @@
 
 <% if signed_in? %>
 
-  <br>
-<% @posts.each do |post| %>
-  <% if !post.anonymous || post.user_id==current_user.id %>
-  <%= render post %>
-<% end %>
+  	<br>
+	<% @posts.each do |post| %>
+  		<% if !post.anonymous || post.user_id==current_user.id %>
+  		<%= render post %>
+	<% end %>
 <% end %>
 
 <% if @posts.length>10 %>
-    <%= render 'shared/loadmore' %>
+	<%= render 'shared/loadmore' %>
 <% end %>
 
-
 <%else%>
-
-  <% render 'shared/unsigned' %>
-
+	<% render 'shared/unsigned' %>
 <% end %>

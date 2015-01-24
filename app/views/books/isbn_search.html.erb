@@ -1,60 +1,60 @@
 <div class="container-fluid book">
-<div class="panel panel-default">  
-<div class="row">
-    <div class="col-md-1 image">
-	<% if @items.first.respond_to? :medium_image %>
-	    <%= image_tag(@items.first.medium_image.url) %>
-	<% else %>
-	    <p>No image</p>
-	<% end %>
-	<br>
-    </div>
-    <div class="col-md-10 sodhi">
-      <p><strong>Title:</strong>
-	<% if @items.first.respond_to? :item_attributes %>
-		<%= @items.first.item_attributes.title %>
-	<% else %>
-	    No info
-	<% end %>
-	</p>
-      <p><strong>Author</strong>
-	<% if @items.first.respond_to? :item_attributes %> 
-		<% author = @items.first.item_attributes.author %>
-      		<% if author.kind_of?(Array) %>
-        		<%= author.join(',') %>
-      		<% else %>
-        		<%= author %>
-      		<% end %>
-	<% else %>
-	    No info
-	<% end %></p>
-      <p><strong>ISBN :</strong>
-	<% if @items.first.respond_to? :asin %>
-		<%= @items.first.asin %>
-	<% else %>
-        	No info
-      	<% end %></p>
-      <p><strong>Pages :</strong>
-	<% if @items.first.respond_to? :item_attributes %>
-		<%= @items.first.item_attributes.number_of_pages %>
-	<% else %>
-        	No info
-      	<% end %></p>
-      <p><strong>Publishers :</strong>
-	<% if @items.first.respond_to? :item_attributes %>
-		<%= @items.first.item_attributes.studio %>
-	<% else %>
-        	No info
-      	<% end %></p>
-      <p class="text-justify"><strong>Description :</strong> 
-	<% if @items.first.respond_to? :editorial_reviews %>
-		<% description = @items.first.editorial_reviews.editorial_review.kind_of?(Array) ? @items.first.editorial_reviews.editorial_review[-1].content : @items.first.editorial_reviews.editorial_review.content %>
-		<%=raw description %>
-	<% else %>
-        	No info
-      	<% end %></p>
-      <%= button_to "Add this book","#",class:"btn btn-xs btn-primary" %>
-    </div>
-  </div>
-</div>
+	<div class="panel panel-default">  
+		<div class="row">
+		    <div class="col-md-1 image">
+				<% if @items.first.respond_to? :medium_image %>
+				    <%= image_tag(@items.first.medium_image.url) %>
+				<% else %>
+				    <p>No image</p>
+				<% end %>
+				<br>
+			    </div>
+			    <div class="col-md-10 sodhi">
+			      <p><strong>Title:</strong>
+				<% if @items.first.respond_to? :item_attributes %>
+					<%= @items.first.item_attributes.title %>
+				<% else %>
+				    No info
+				<% end %>
+				</p>
+			    <p><strong>Author</strong>
+				<% if @items.first.respond_to? :item_attributes %> 
+					<% author = @items.first.item_attributes.author %>
+			      	<% if author.kind_of?(Array) %>
+			        	<%= author.join(',') %>
+			      	<% else %>
+			        	<%= author %>
+			      	<% end %>
+				<% else %>
+				    No info
+				<% end %></p>
+		      	<p><strong>ISBN :</strong>
+				<% if @items.first.respond_to? :asin %>
+					<%= @items.first.asin %>
+				<% else %>
+		        	No info
+		      	<% end %></p>
+		      	<p><strong>Pages :</strong>
+				<% if @items.first.respond_to? :item_attributes %>
+					<%= @items.first.item_attributes.number_of_pages %>
+				<% else %>
+		        	No info
+		      	<% end %></p>
+		      	<p><strong>Publishers :</strong>
+				<% if @items.first.respond_to? :item_attributes %>
+					<%= @items.first.item_attributes.studio %>
+				<% else %>
+		        	No info
+		      	<% end %></p>
+		      	<p class="text-justify"><strong>Description :</strong> 
+				<% if @items.first.respond_to? :editorial_reviews %>
+					<% description = @items.first.editorial_reviews.editorial_review.kind_of?(Array) ? @items.first.editorial_reviews.editorial_review[-1].content : @items.first.editorial_reviews.editorial_review.content %>
+					<%=raw description %>
+				<% else %>
+		        	No info
+		      	<% end %></p>
+		      	<%= button_to "Add this book","#",class:"btn btn-xs btn-primary" %>
+	    	</div>
+	  	</div>
+	</div>
 </div>

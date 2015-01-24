@@ -1,8 +1,8 @@
 <% if signed_in? %>
 <div class="col-md-8 search">
-    <%= render 'shared/search' %>
+	<%= render 'shared/search' %>
     <%= render partial: 'books/books', locals: { books: @books } %>
 </div>
 <% else %>
-  <%= render 'shared/unsigned' %>
+	<%= render 'shared/unsigned' %>
 <% end %>
