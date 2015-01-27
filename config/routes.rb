@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/accept',to:'request_books#accept'
   get 'books/create/:isbn', to:'books#create_book_isbn'
  get '/new_book',to:'books#new'
+  get 'upload', to: 'books#upload'
+  post 'upload/notes', to: 'books#notes_upload'
   resources :users
   resources :sessions, only: [:create, :delete]
   resources :books

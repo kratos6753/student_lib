@@ -259,14 +259,21 @@ form_container
 }
 .isb
 {
-    font-size:200%;
+    font-size:300%;
     color:#e74c3c;
-    position:relative;
-    top:47px;
-    margin-left:4%;
 }
 .bookform
 {
     position:absolute;
     top:120px;
+}
+.formcontainer
+{
+    position:absolute;
+    top:200px;
+}
+.isbform
+{
+    position:absolute;
+    top:200px;
 }

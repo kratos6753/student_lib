@@ -20,8 +20,8 @@
 	</div>
 	<div id ='dnb_sec' class='dnb_secondary col-xs-12' data-0 = "margin-top:0px; position:relative; background-color:rgba(231, 76, 60,1.0);"data-50="margin-top:0px;position:fixed;background-color:rgb(255,255,255,0.99);">
 		<nav>
-            <span class='col-xs-2'>
-    			<div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Student&nbsp;Library&nbsp;</div>
+            <span class='col-xs-3'>
+    			<div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)"><%= link_to "Student Library", root_path ,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %></div>
     		</span>
 			<% if !signed_in? %>
 				<ul class='col-xs-1 pull-right'>
@@ -43,13 +43,18 @@
               			<li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
                     </ul>
                 </div>
-				<ul class='col-xs-3 pull-right'>
-					<li class='col-xs-12 col-sm-6 col-md-6 col-lg-5'>
+				<ul class='col-xs-6'>
+					<li class='col-xs-12 col-sm-4 col-md-4 col-lg-3'>
 						<div class="btn2" >
                             <%= link_to "My Books", books_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
 						</div>
 					</li>
-					<li class='hidden-xs col-sm-6 col-md-6 col-lg-5'>
+                    <li class='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+                        <div class="btn2" >
+                            <%= link_to "Upload Notes", upload_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
+                        </div>
+                    </li>
+					<li class='hidden-xs col-sm-4 col-md-4 col-lg-3'>
                         <div class='btn2 dropdown'>
                             <a class="curs  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
                             </a>                            

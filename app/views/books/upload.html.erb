@@ -1,0 +1,6 @@
+<div class="formcontainer col-xs-3 col-xs-offset-2">
+<%= form_tag({ :action => :notes_upload }, multipart: true, html: {class: "form-horizontal"}) do %>
+	<%= file_field_tag 'file' %><br>
+	<%= submit_tag 'Submit', class: 'btn btn-large btn-danger' %>
+<% end %>
+</div>

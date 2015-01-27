@@ -1,7 +1,7 @@
+<div class="isbform col-xs-5 col-xs-offset-4"> 
 <%= form_tag({controller:'books',action:'isbn_search'},{method:"get",class:"form-show form-inline"}) do %>
-<p class="isb ">Enter an isbn number</p>
-<div class="isbform col-md-5 col-md-offset-3">  
-	<%= text_field_tag :isbn, nil,class:"form-control", placeholder:"ISBN number" %>
-    <%= submit_tag "Submit", class:"btn btn-danger form-trigger" %>
-</div>
+	<p class="isb ">Enter an isbn number</p> 
+	<div class="col-xs-offset-1"><%= text_field_tag :isbn, nil,class:"form-control", placeholder:"ISBN number" %>
+    <%= submit_tag "Submit", class:"btn btn-danger form-trigger" %></div>
 <% end %>
+</div>

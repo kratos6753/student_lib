@@ -74,6 +74,19 @@ class BooksController < ApplicationController
     @items = ( isbn.length == 10 ) ? (client.lookup isbn) : (client.lookup convert_to_isbn10(isbn))
   end
 
+  def upload
+  end
+
+  def notes_upload
+    if params[:file]
+      file = params[:file]
+      File.open(Rails.root.join('public','uploads',file.original_filename), 'wb') do |f|
+        f.write(file.read)
+      end
+      flash[:success] = 'Notes successfully uploaded'
+      redirect_to root_path
+    end
+  end
   def search
     @books = []
     
