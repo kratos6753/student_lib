@@ -5,6 +5,7 @@
  *
  * Free to use under terms of MIT license
  */
+
 (function(window, document, undefined) {
 	'use strict';
 

@@ -4,7 +4,7 @@
  * Converts them to data-attributes.
  * Doesn't expose any globals.
  */
-ready=->{(function(window, document, undefined) {
+(function(window, document, undefined) {
 	'use strict';
 
 	var content;
@@ -255,6 +255,4 @@ ready=->{(function(window, document, undefined) {
 	};
 
 	kickstart(document.querySelectorAll('link, style'));
-}(window, document));}
-$(document).ready(ready)
-$(document).on('page:load', ready)
+}(window, document));

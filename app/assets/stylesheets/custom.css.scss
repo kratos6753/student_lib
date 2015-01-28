@@ -19,9 +19,10 @@
         background-color:rgba(255, 255, 255,0.99);
     }
 }
-body
-{
-    padding-bottom:70px;
+html, body {
+margin: 0px;
+padding: 0px;
+overflow-x: scroll;
 }
 .dropdown>a
 {
@@ -35,10 +36,36 @@ body
 {
     max-width:none!important;
 }
+/*bookindexcss begins*/
 .search
 {
-    margin-top:10%;
+position:fixed;
+top:30%;
 }
+.booksearch
+{
+font-size:400%;
+color:#e74c3c;
+text-align:center;
+}
+.searchbox
+{
+height:2.5em;
+}
+.button
+{
+font-size:1.4em;
+padding:10px 15px;
+}
+@media screen and (max-width: 992px) and (min-width: 768px)
+{
+.button
+{
+font-size:1.2em;
+padding:10px 12px;
+}
+}
+/*bookindexcss ends*/
 .isbn
 {
     margin-top:10%;
@@ -97,20 +124,6 @@ body
 .button1
 {
     width:30%;
-}
-.btn-xlarge
-{
-    padding:5px 15px!important;
-    font-size:30px!important;
-}
-.searchbutton
-{
-    height:60px;
-}
-.bs
-{
-    color:#e74c3c;
-    font-size:400%;
 }
 .dnb_secondary li:hover
 {
