@@ -1,14 +1,14 @@
 
-	<div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
+	<div class='col-xs-12 col-md-12 col-sm-12 col-lg-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
         <nav>
             <ul>
-                <li class='col-xs-5 col-md-3 pull-left'>
-                    <span class='col-xs-12' id='dnb_logo'>
+                <li class='col-sm-3 col-md-2 col-xs-3 pull-left'>
+                    <span id='dnb_logo'>
                         <p><b>Students&nbsp;</b>Portal</p>
                     </span>
                 </li>
-		        <li class='col-xs-5 col-md-6'>
-                    <div class="input-group col-xs-12">
+		        <li class='col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-2 col-md-6'>
+                    <div class="input-group ">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button">Go</button>
                         </span>
@@ -18,54 +18,63 @@
             </ul>
         </nav>
 	</div>
-	<div id ='dnb_sec' class='dnb_secondary col-xs-12' data-0 = "margin-top:0px; position:relative; background-color:rgba(231, 76, 60,1.0);"data-50="margin-top:0px;position:fixed;background-color:rgb(255,255,255,0.99);">
+	<div id ='dnb_sec' class='dnb_secondary col-md-12 col-xs-12 col-sm-12 col-lg-12' data-0 = "margin-top:0px; position:relative; background-color:rgba(231, 76, 60,1.0);"data-50="margin-top:0px;position:fixed;background-color:rgb(255,255,255,0.99);">
 		<nav>
-            <span class='col-xs-3'>
-    			<div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)"><%= link_to "Student Library", root_path ,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %></div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsivelink">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class='col-md-3 col-sm-3 col-xs-3'>
+    			<div class='btn2 col-xs-12 col-md-12 col-sm-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)"><%= link_to "Student Library", root_path ,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %></div>
     		</span>
-			<% if !signed_in? %>
-				<ul class='col-xs-1 pull-right'>
-                    <li class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-                        <div class="btn2">
-          				  <%= link_to "Sign In", signin_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
-						</div>
-					</li>
-				</ul>	
-			<% else %>
-                <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right"><!--include class dropdown here to get the dropdown on hover-->
-                    <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.fullname %><span class="caret"></span></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                        <li><%= link_to "My profile", current_user %></li>
-					    <li><%= link_to "My requests",requests_path  %></li>
-              			<li><%= link_to "Pending approvals",approvals_path  %></li>
-              			<li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
+            <div class="collapse navbar-collapse" id="responsivelink">
+    			<% if !signed_in? %>
+    				<ul class='col-xs-1 pull-right'>
+                        <li class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                            <div class="btn2">
+              				  <%= link_to "Sign In", signin_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
+    						</div>
+    					</li>
+    				</ul>	
+    			<% else %>
+                    <div class="col-md-3 col-sm-2 dropdown pull-right col-xs-12"><!--include class dropdown here to get the dropdown on hover-->
+                        <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.fullname %><span class="caret"></span></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li><%= link_to "My profile", current_user %></li>
+    					    <li><%= link_to "My requests",requests_path  %></li>
+                  			<li><%= link_to "Pending approvals",approvals_path  %></li>
+                  			<li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
+                        </ul>
+                    </div>
+    				<ul class='col-md-6 col-sm-7'>
+    					<li class='col-sm-4 col-md-4 col-xs-12'>
+    						<div class="btn2" >
+                                <%= link_to "My Books", books_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
+    						</div>
+    					</li>
+                        <li class='col-sm-4 col-md-4 col-xs-12'>
+                            <div class="btn2" >
+                                <%= link_to "Upload Notes", upload_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
+                            </div>
+                        </li>
+    					<li class='col-sm-4 col-md-4 col-xs-12'>
+                            <div class='btn2 dropdown'>
+                                <a class="curs  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
+                                </a>                            
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    								<li><%= link_to "via ISBN", add_path %></li>
+                  					<li><%= link_to "via Book details", new_book_path %></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
-                </div>
-				<ul class='col-xs-6'>
-					<li class='col-xs-12 col-sm-4 col-md-4 col-lg-3'>
-						<div class="btn2" >
-                            <%= link_to "My Books", books_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
-						</div>
-					</li>
-                    <li class='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-                        <div class="btn2" >
-                            <%= link_to "Upload Notes", upload_path,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %>
-                        </div>
-                    </li>
-					<li class='hidden-xs col-sm-4 col-md-4 col-lg-3'>
-                        <div class='btn2 dropdown'>
-                            <a class="curs  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
-                            </a>                            
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-								<li><%= link_to "via ISBN", add_path %></li>
-              					<li><%= link_to "via Book details", new_book_path %></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-			<% end %>
+    			<% end %>
+            </div>
         </nav>
 	</div>
 
