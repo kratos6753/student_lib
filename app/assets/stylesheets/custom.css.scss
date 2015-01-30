@@ -235,19 +235,9 @@ form_container
 {
     box-sizing: border-box;
     width: 100%;
-    height:40px;
     left:0px;
     position:relative;
     margin-top: auto;
-    z-index: 98;
-}
-@media screen and (min-width: 300px) and (max-width: 702px)
-{
-    .btn2
-    {
-        padding-top:0px!important;
-        margin-top: 0px!important;
-    }
 }
 .dnb_secondary ul
 {
@@ -258,6 +248,28 @@ form_container
 .dnb_secondary li
 {
     border-top: 2px solid rgba(255, 255, 255,0);
+}
+@media screen and (max-width:767px)
+{
+    .dnb_secondary li:hover
+    {
+        border-top: none;
+    }
+    .dnb_secondary li
+    {
+        margin-left:0px;
+        padding-left:0px;
+    }
+    .btn2
+    {
+    border:none;
+    padding-top:10px!important;
+    margin-top:0px!important;
+    }
+    .dnb_secondary li:hover
+    {
+        border-top: none!important;
+    }
 }
 .btn2
 {
@@ -342,4 +354,17 @@ form_container
 {
     position:absolute;
     top:200px;
+}
+/*responsive-nav*/
+.menu-item
+{
+    float:left;
+}
+.navbar-toggle .icon-bar 
+{
+display: block!important;
+width: 22px!important;
+height: 2px!important;
+border-radius: 1px!important;
+background-color: #888!important;
 }

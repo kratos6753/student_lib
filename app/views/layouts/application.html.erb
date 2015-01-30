@@ -7,15 +7,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'skrollr.stylesheets', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'skrollr.js', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'responsive-nav.js', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'iitm.ico' %>
 </head>
-<body id="skrollr-body">
+<body>
 	<%= render "shared/navbar" %>
 	<div class='content'>
 		<%= yield %>
 	</div>
-	<script >skrollr.init();</script>
+	<script >
+  skrollr.init();</script>
 </body>
 <footer>
 	<%= render "shared/footer"%>
