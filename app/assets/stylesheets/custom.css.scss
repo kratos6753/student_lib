@@ -48,6 +48,13 @@ font-size:400%;
 color:#e74c3c;
 text-align:center;
 }
+@media screen and (max-width:470px) and (min-width:300px)
+{
+    .booksearch
+    {
+        font-size:300%;
+    }
+}
 .searchbox
 {
 height:2.5em;
@@ -72,6 +79,33 @@ padding:10px 12px;
 font-size:1em;
 padding:6px 8px;
 margin-left:35%;
+}
+}
+@media screen and (max-width: 469px) and (min-width: 425px)
+{
+.button
+{
+font-size:1em;
+padding:4px 6px;
+margin-left:33%;
+}
+}
+@media screen and (max-width: 424px) and (min-width: 350px)
+{
+.button
+{
+font-size:1em;
+padding:4px 6px;
+margin-left:30%;
+}
+}
+@media screen and (max-width: 349px) and (min-width: 300px)
+{
+.button
+{
+font-size:1em;
+padding:4px 6px;
+margin-left:28%;
 }
 }
 @media screen and (max-width: 650px) and (min-width: 550px)
@@ -202,7 +236,7 @@ form_container
         font-size: 1.5em;
     }
 }   
-@media screen and (min-width: 300px) and (max-width: 469px)
+@media screen and (min-width: 350px) and (max-width: 469px)
 {
     #dnb_logo
     {
@@ -211,6 +245,21 @@ form_container
     #dnb_logo p
     {
        padding-top:5px;
+    }
+}
+@media screen and (min-width: 300px) and (max-width: 349px)
+{
+    #dnb_logo
+    {
+        font-size: 1.3em;
+    }
+    #dnb_logo p
+    {
+       padding-top:5px;
+    }
+    .btn,.form-control
+    {
+    display:none!important;
     }
 }
 #dnb_logo p
@@ -360,11 +409,13 @@ form_container
 {
     float:left;
 }
-.navbar-toggle .icon-bar 
+.navbar-toggle
 {
-display: block!important;
-width: 22px!important;
-height: 2px!important;
-border-radius: 1px!important;
-background-color: #888!important;
+    padding:10px 12px!important;
+    margin-top:11px!important;
+    margin-bottom:6px!important;
+}
+.navbar-toggle:hover
+{
+    background-color:rgb(191,191,191)!important;
 }

@@ -20,18 +20,12 @@
         </nav>
 	</div>
 	<div id ='dnb_sec' class='dnb_secondary col-md-12 col-xs-12 col-sm-12 col-lg-12' data-0 = "margin-top:0px; position:relative; background-color:rgba(231, 76, 60,1.0);"data-50="margin-top:0px;position:fixed;background-color:rgb(255,255,255,0.99);">
-		  <div class="navbar-header">
+		   <nav class="nav-collapse" role="navigation">
             <span class='col-md-3 col-sm-3 col-xs-10'>
     			<div class='btn2 col-xs-11 col-md-12 col-sm-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)"><%= link_to "Student Library", root_path ,:data => { :'0' => "color:rgb(255,255,255)", :'50' => "color:rgb(0,0,0)" } %></div>
     		</span>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> </button>
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-                <nav class="nav-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" data-0="background-color:rgb(238, 238, 238)" data-50="background-color:rgb(189,199,195)"> </button>
+                </button>  
     			<% if !signed_in? %>
     				<ul class='col-xs-1 pull-right'>
                         <li class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -43,7 +37,7 @@
     			<% else %>
                     <div class="col-md-3 col-sm-2 hidden-xs dropdown pull-right"><!--include class dropdown here to get the dropdown on hover-->
                         <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.fullname %><span class="caret"></span></span>
+                            <span class="btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" datdata-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)"a-50="color:rgb(0,0,0)" aria-hidden="true"><%= current_user.fullname %><span class="caret"></span></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             <li><%= link_to "My profile", current_user %></li>
@@ -65,7 +59,7 @@
                         </li>
     					<li class='col-sm-4 col-md-4 col-xs-12 hidden-xs'>
                             <div class='btn2 dropdown  navbar-collapse collapse'>
-                                <a class="curs  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
+                                <a class="curs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Add a Book<span class="caret"></span>
                                 </a>                            
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
     								<li><%= link_to "via ISBN", add_path %></li>
